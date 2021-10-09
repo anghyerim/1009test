@@ -23,3 +23,12 @@ jobs:
       
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: WAR with Gradle
+          path: ./build/libs/*.war
+      
+      - uses: actions/download-artifact@v2
+        with:
+         name: WAR_With_Gradle    
